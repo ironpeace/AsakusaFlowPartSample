@@ -1,27 +1,41 @@
 package test.flowpart.testing.flowpart.stage0001;
 import com.asakusafw.runtime.core.Result;
-import ironpeace.modelgen.dmdl.model.Middata2;
 import ironpeace.modelgen.dmdl.model.OriginalData;
+import ironpeace.operator.Part1Operator;
 import ironpeace.operator.Part1OperatorImpl;
 /**
- * {@code [od->Part1Operator.converted2(operator#328588635)]}の処理を担当するマッププログラムの断片。
+ * {@code [od->Part1Operator.balaced(operator#1428983720)]}の処理を担当するマッププログラムの断片。
  */
 @SuppressWarnings("deprecation") public final class MapFragment2 implements Result<OriginalData> {
-    private final Result<OriginalData> original;
-    private final Result<Middata2> out;
+    private final Result<OriginalData> one;
+    private final Result<OriginalData> two;
+    private final Result<OriginalData> unknown;
     private Part1OperatorImpl op = new Part1OperatorImpl();
     /**
      * インスタンスを生成する。
-     * @param original {@code Part1Operator.converted2#original}への出力
-     * @param out {@code Part1Operator.converted2#out}への出力
+     * @param one {@code Part1Operator.balaced#one}への出力
+     * @param two {@code Part1Operator.balaced#two}への出力
+     * @param unknown {@code Part1Operator.balaced#unknown}への出力
      */
-    public MapFragment2(Result<OriginalData> original, Result<Middata2> out) {
-        this.original = original;
-        this.out = out;
+    public MapFragment2(Result<OriginalData> one, Result<OriginalData> two, Result<OriginalData> unknown) {
+        this.one = one;
+        this.two = two;
+        this.unknown = unknown;
     }
     @Override public void add(OriginalData result) {
-        Middata2 v = this.op.converted2(result);
-        this.original.add(result);
-        this.out.add(v);
+        Part1Operator.Type v = this.op.balaced(result);
+        switch(v) {
+            case ONE:
+                this.one.add(result);
+                break;
+            case TWO:
+                this.two.add(result);
+                break;
+            case UNKNOWN:
+                this.unknown.add(result);
+                break;
+            default:
+                throw new AssertionError(v);
+        }
     }
 }

@@ -1,14 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: ironpeace.jobflow.Part1JobFlowTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 12.281 sec <<< FAILURE!
-testPart1JobFlow(ironpeace.jobflow.Part1JobFlowTest)  Time elapsed: 12.244 sec  <<< FAILURE!
-java.lang.AssertionError: 
-Middata1: 結果に対する期待値がありません: キー={}: expected <null>, but was <{user-type="1", userid="1111"}>
-Middata2: 結果に対する期待値がありません: キー={}: expected <null>, but was <{user-type="2", userid="TWO_222"}>
-
-	at com.asakusafw.testdriver.JobflowExecutor.verify(JobflowExecutor.java:505)
-	at com.asakusafw.testdriver.FlowPartTester.runTestInternal(FlowPartTester.java:146)
-	at com.asakusafw.testdriver.FlowPartTester.runTest(FlowPartTester.java:92)
-	at ironpeace.jobflow.Part1JobFlowTest.testPart1JobFlow(Part1JobFlowTest.java:33)
-
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.213 sec

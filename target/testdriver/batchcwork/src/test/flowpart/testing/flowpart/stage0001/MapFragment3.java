@@ -1,41 +1,27 @@
 package test.flowpart.testing.flowpart.stage0001;
 import com.asakusafw.runtime.core.Result;
+import ironpeace.modelgen.dmdl.model.Middata1;
 import ironpeace.modelgen.dmdl.model.OriginalData;
-import ironpeace.operator.Part1Operator;
 import ironpeace.operator.Part1OperatorImpl;
 /**
- * {@code [od->Part1Operator.balaced(operator#1408732008)]}の処理を担当するマッププログラムの断片。
+ * {@code [od->Part1Operator.converted1(operator#1763929301)]}の処理を担当するマッププログラムの断片。
  */
 @SuppressWarnings("deprecation") public final class MapFragment3 implements Result<OriginalData> {
-    private final Result<OriginalData> one;
-    private final Result<OriginalData> two;
-    private final Result<OriginalData> unknown;
+    private final Result<OriginalData> original;
+    private final Result<Middata1> out;
     private Part1OperatorImpl op = new Part1OperatorImpl();
     /**
      * インスタンスを生成する。
-     * @param one {@code Part1Operator.balaced#one}への出力
-     * @param two {@code Part1Operator.balaced#two}への出力
-     * @param unknown {@code Part1Operator.balaced#unknown}への出力
+     * @param original {@code Part1Operator.converted1#original}への出力
+     * @param out {@code Part1Operator.converted1#out}への出力
      */
-    public MapFragment3(Result<OriginalData> one, Result<OriginalData> two, Result<OriginalData> unknown) {
-        this.one = one;
-        this.two = two;
-        this.unknown = unknown;
+    public MapFragment3(Result<OriginalData> original, Result<Middata1> out) {
+        this.original = original;
+        this.out = out;
     }
     @Override public void add(OriginalData result) {
-        Part1Operator.Type v = this.op.balaced(result);
-        switch(v) {
-            case ONE:
-                this.one.add(result);
-                break;
-            case TWO:
-                this.two.add(result);
-                break;
-            case UNKNOWN:
-                this.unknown.add(result);
-                break;
-            default:
-                throw new AssertionError(v);
-        }
+        Middata1 v = this.op.converted1(result);
+        this.original.add(result);
+        this.out.add(v);
     }
 }

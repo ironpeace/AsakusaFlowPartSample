@@ -38,7 +38,7 @@ public abstract class Part1Operator {
 		
 		if(od.getUserTypeAsString().equals("1")){
 			m2.setUseridAsString("ONE_" + od.getUseridAsString());
-		}else{
+		}else if(od.getUserTypeAsString().equals("2")){
 			m2.setUseridAsString("TWO_" + od.getUseridAsString());
 		}
 		

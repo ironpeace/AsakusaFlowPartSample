@@ -39,6 +39,7 @@ public class Part1JobFlow extends FlowDescription {
 			= op.balaced(od);
 		
 		cp.stop(balanced.unknown);
+		cp.stop(balanced.two);
 		
 		Converted1 converted1 = op.converted1(balanced.one);
 		
@@ -46,7 +47,7 @@ public class Part1JobFlow extends FlowDescription {
 		
 		cp.stop(converted1.original);
 		
-		Converted2 converted2 = op.converted2(balanced.two);
+		Converted2 converted2 = op.converted2(od);
 		
 		m2.add(converted2.out);
 		
