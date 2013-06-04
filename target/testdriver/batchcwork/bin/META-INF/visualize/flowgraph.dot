@@ -1,0 +1,19 @@
+digraph {
+    "746e95e4-ac8c-44ca-9ed9-84f00c9f6696" [shape=invhouse, label="middata2"];
+    "45640afb-08b4-49fc-8707-6c07f7d7589c" [shape=box, label="@Convert\nPart1Operator.converted1"];
+    "ba9e7f3b-2200-4943-a322-d3f2228c5575" [shape=box, label="@Branch\nPart1Operator.balaced"];
+    "1652bb8b-3d46-4108-a76a-4baf5b3b75e0" [shape=point];
+    "14a6cd70-f0b0-4b8e-b624-b8b8d6cb206c" [shape=box, label="@Convert\nPart1Operator.converted2"];
+    "60a85c35-e08a-4f17-adfd-6f492ac315ac" [shape=invhouse, label="original_data"];
+    "ce3724d8-90ea-4641-8dd5-28650b2754bf" [shape=point];
+    "30799e44-e6ec-4563-8658-0f6f839e8b5d" [shape=invhouse, label="middata1"];
+    "2b959bd1-0b2c-4a9a-8609-664000d63185" [shape=point];
+    "45640afb-08b4-49fc-8707-6c07f7d7589c" -> "ce3724d8-90ea-4641-8dd5-28650b2754bf" [label="original>in"];
+    "45640afb-08b4-49fc-8707-6c07f7d7589c" -> "30799e44-e6ec-4563-8658-0f6f839e8b5d" [label="out>port"];
+    "ba9e7f3b-2200-4943-a322-d3f2228c5575" -> "45640afb-08b4-49fc-8707-6c07f7d7589c" [label="one>od"];
+    "ba9e7f3b-2200-4943-a322-d3f2228c5575" -> "14a6cd70-f0b0-4b8e-b624-b8b8d6cb206c" [label="two>od"];
+    "ba9e7f3b-2200-4943-a322-d3f2228c5575" -> "2b959bd1-0b2c-4a9a-8609-664000d63185" [label="unknown>in"];
+    "14a6cd70-f0b0-4b8e-b624-b8b8d6cb206c" -> "1652bb8b-3d46-4108-a76a-4baf5b3b75e0" [label="original>in"];
+    "14a6cd70-f0b0-4b8e-b624-b8b8d6cb206c" -> "746e95e4-ac8c-44ca-9ed9-84f00c9f6696" [label="out>port"];
+    "60a85c35-e08a-4f17-adfd-6f492ac315ac" -> "ba9e7f3b-2200-4943-a322-d3f2228c5575" [label="port>od"];
+}

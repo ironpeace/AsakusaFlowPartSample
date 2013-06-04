@@ -1,0 +1,14 @@
+-------------------------------------------------------------------------------
+Test set: ironpeace.jobflow.Part1JobFlowTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 10.63 sec <<< FAILURE!
+testPart1JobFlow(ironpeace.jobflow.Part1JobFlowTest)  Time elapsed: 10.599 sec  <<< FAILURE!
+java.lang.AssertionError: HadoopƒWƒ‡ƒu‚ÌŽÀs‚ÉŽ¸”s‚µ‚Ü‚µ‚½ (exitCode=255, flowId=Part1JobFlowTest-testing-flowpart, command=[/Users/ITPUser/asakusa-develop/asakusa/testing/libexec/hadoop-execute.sh, /Users/ITPUser/dev/asakusa/asakusa-develop/workspace/flowpartsample/target/testdriver/batchcwork/jobflow-flowpart.jar, test.flowpart.testing.flowpart.temporary.output.epilogue.StageClient, -D, com.asakusafw.executionId=Part1JobFlowTest-testing-flowpart, -D, com.asakusafw.batchArgs=, -D, com.asakusafw.user=ITPUser])
+	at com.asakusafw.testdriver.JobflowExecutor.runHadoopJob(JobflowExecutor.java:345)
+	at com.asakusafw.testdriver.JobflowExecutor.runJobflowJobs(JobflowExecutor.java:312)
+	at com.asakusafw.testdriver.JobflowExecutor.executePlan(JobflowExecutor.java:294)
+	at com.asakusafw.testdriver.JobflowExecutor.runJobflow(JobflowExecutor.java:226)
+	at com.asakusafw.testdriver.FlowPartTester.runTestInternal(FlowPartTester.java:141)
+	at com.asakusafw.testdriver.FlowPartTester.runTest(FlowPartTester.java:92)
+	at ironpeace.jobflow.Part1JobFlowTest.testPart1JobFlow(Part1JobFlowTest.java:33)
+

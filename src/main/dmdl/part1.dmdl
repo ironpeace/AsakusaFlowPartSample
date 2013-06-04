@@ -1,0 +1,29 @@
+"OriginalData"
+@directio.csv(
+    has_header = FALSE
+)
+original_data = {
+    "USERID"
+    @directio.csv.field(name = "USER_ID")
+    userid : TEXT;
+
+    "USERTYPE"
+    @directio.csv.field(name = "USER_TYPE")
+    user_type : TEXT;
+};
+
+middata1 = {
+    "USERID"
+    userid : TEXT;
+
+    "USERTYPE"
+    user_type : TEXT;
+};
+
+middata2 = {
+    "USERID"
+    userid : TEXT;
+
+    "USERTYPE"
+    user_type : TEXT;
+};
