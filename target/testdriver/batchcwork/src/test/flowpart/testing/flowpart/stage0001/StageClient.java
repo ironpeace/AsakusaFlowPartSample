@@ -32,7 +32,7 @@ public final class StageClient extends AbstractStageClient {
         List<StageInput> results = new ArrayList<StageInput>();
         Map<String, String> attributes = null;
         attributes = new HashMap<String, String>();
-        results.add(new StageInput("target/testdriver/hadoopwork/${execution_id}/input/original05fdata", 
+        results.add(new StageInput("target/testdriver/hadoopwork/${execution_id}/input/originaldata", 
                 TemporaryInputFormat.class, StageMapper1.class, attributes));
         return results;
     }

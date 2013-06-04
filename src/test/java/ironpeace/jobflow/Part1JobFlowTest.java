@@ -18,16 +18,16 @@ public class Part1JobFlowTest {
 		FlowPartTester tester = new FlowPartTester(getClass());
 		
 		In<OriginalData> od
-			= tester.input("original_data", OriginalData.class)
+			= tester.input("originaldata", OriginalData.class)
 				.prepare("original_data.xls#input");
 		
 		Out<Middata1> m1
 			= tester.output("middata1", Middata1.class)
-				.prepare("middata1.xls#output");
+				.verify("middata1.xls#output", "middata1.xls#rule");
 		
 		Out<Middata2> m2
 			= tester.output("middata2", Middata2.class)
-				.prepare("middata2.xls#output");
+				.verify("middata2.xls#output", "middata2.xls#rule");
 		
 		FlowDescription flowpart = new Part1JobFlow(od, m1, m2);
 		tester.runTest(flowpart);

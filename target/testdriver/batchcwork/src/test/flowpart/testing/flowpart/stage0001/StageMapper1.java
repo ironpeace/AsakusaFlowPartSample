@@ -22,10 +22,10 @@ import org.apache.hadoop.mapreduce.Mapper;
         this.runtimeResourceManager = new RuntimeResourceManager(context.getConfiguration());
         this.runtimeResourceManager.setup();
         this.outputs = new StageOutputDriver(context);
-        final Result<Middata1> output = outputs.getResultSink("result0");
-        final MapFragment1 line0 = new MapFragment1(new VoidResult<OriginalData>(), output);
         final Result<Middata2> output0 = outputs.getResultSink("result10");
         final MapFragment2 line1 = new MapFragment2(new VoidResult<OriginalData>(), output0);
+        final Result<Middata1> output = outputs.getResultSink("result0");
+        final MapFragment1 line0 = new MapFragment1(new VoidResult<OriginalData>(), output);
         this.line = new MapFragment3(line0, line1, new VoidResult<OriginalData>());
     }
     @Override public void cleanup(Context context) throws IOException, InterruptedException {
